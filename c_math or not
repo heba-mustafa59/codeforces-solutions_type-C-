@@ -1,0 +1,79 @@
+/*** وَمَا تَوْفِيقِي إِلَّا بِاللَّهِ ۚ عَلَيْهِ تَوَكَّلْتُ وَإِلَيْهِ أُنِيبُ ***/
+/* Yildiz ☆ */
+using namespace std;
+#include <bits/stdc++.h>
+#define habboosh main
+#define heba ios::sync_with_stdio(false); cin.tie(nullptr);
+#define ss second
+#define ll long long
+#define loop  for (int i=0; i<n;i++)
+#define ww  while (t--)
+#define for1(i,m,n) for(auto i = m; i < n; ++i)
+#define all(x) (x).begin(), (x).end()
+#include <ext/pb_ds/tree_policy.hpp>
+#include <ext/pb_ds/assoc_container.hpp>
+using namespace __gnu_pbds;
+template<typename T>
+using o_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;//ordered set
+template<typename T>
+using o_mset = tree<T, null_type, less_equal<T>, rb_tree_tag, tree_order_statistics_node_update>;//ordered multiset
+vector<pair<ll,ll>> di = {{1,1},{-1,-1},{0,0}};
+const ll mod =2e5 + 7;
+const ll inf=2e18+1;
+const int N =100+1 ,M=N+4;
+vector <int> adj[N];
+int vis[N];
+ll GCD(ll a, ll b)
+{
+    if (b == 0)
+        return a;
+    return gcd(b, a % b);
+}
+ll lcm(ll a, ll b)
+{
+    return (a / gcd(a, b)) * b;
+}
+ll pow(ll x, ll y)
+{
+    if (y == 0)
+        return 1;
+    ll temp = pow(x, y / 2) ;
+    temp = (temp*temp);
+    if (y % 2 != 0)
+        temp = (temp*x);
+    return temp;
+ 
+}
+bool isprime(ll x)
+{
+    if(x<2)
+        return false;
+    
+    if(x==2) return true;
+    if(x%2==0) return false;
+    for(ll i=3; i<=(ll)sqrt(x); i+=2) if(x%i==0) return false;
+ 
+    return true;
+}
+ll power_mod(ll x, ll y,ll m) {
+    if (y == 0)
+        return 1;
+    ll temp = power_mod(x, y / 2, m) ;
+    temp = (temp*temp)% m;
+    if (y % 2 != 0)
+        temp = (temp*x)% m;
+    return temp;
+}
+ 
+ 
+ 
+int habboosh() {
+     heba
+ ll t;
+    cin >> t;
+    while (t--) {
+        ll n;cin>>n;
+        ll s= (ll)cbrt(n)+(ll)sqrt(n) - ((ll)sqrt(cbrt(n)));
+        cout<<s<<"\n";
+    }
+}
